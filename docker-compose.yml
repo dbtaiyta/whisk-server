@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  whisk-api:
+    build: .
+    container_name: whisk-api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - COOKIE=${COOKIE:-}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

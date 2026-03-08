@@ -1,0 +1,14 @@
+{
+  "name": "whisk-server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Web server wrapper for whisk-api, designed for n8n workflow integration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@rohitaryal/whisk-api": "^4.0.1",
+    "express": "^4.21.0"
+  }
+}
